@@ -1,0 +1,15 @@
+# Build
+/out/
+/build/
+/target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# OS crap
+.DS_Store
+Thumbs.db
