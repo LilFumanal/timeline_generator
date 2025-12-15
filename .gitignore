@@ -13,3 +13,17 @@
 # OS crap
 .DS_Store
 Thumbs.db
+
+# Java
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# SQLite
+*.db
+*.sqlite*
+
+# Exports
+*.png
+*.pdf
