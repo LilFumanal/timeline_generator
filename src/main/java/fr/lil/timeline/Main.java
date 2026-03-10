@@ -1,23 +1,25 @@
 package fr.lil.timeline;
 
-import javafx.application.Application;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import fr.lil.timeline.domain.model.Event;
+import fr.lil.timeline.domain.model.Timeline;
+import fr.lil.timeline.domain.service.TimelineService;
 
-public class Main extends Application{
+import java.sql.Array;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+
+public class Main {
     public static void main(String[] args) {
-        launch(args);
-    }
+        TimelineService service = new TimelineService();
 
-    @java.lang.Override
-    public void start(Stage stage) throws Exception {
-        Label titre = new Label("Titre");
-        VBox conteneur = new VBox(titre);
-        Scene scene = new Scene(conteneur);
-        stage.setTitle("Fenêtre");
-        stage.setScene(scene);
-        stage.show();
+        Timeline t = service.createTimeline(
+                LocalDate.of(2000,1,1),
+                LocalDate.of(2020,1,1)
+        );
+
+        System.out.println(service.getAllTimelines());
     }
 }
